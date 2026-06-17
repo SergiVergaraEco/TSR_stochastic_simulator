@@ -1,0 +1,17 @@
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Temporales / pruebas
+_test_*.R
+_test_*.png
+_tune.R
+_dbg.R
+rsconnect/
+
+# OS
+.DS_Store
+Thumbs.db

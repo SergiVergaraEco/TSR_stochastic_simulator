@@ -1,8 +1,8 @@
 # Simulador estocástico de desacumulación en la jubilación
 
-Aplicación **Shiny** que ejecuta el modelo del TFM *«Heterogeneidad patrimonial y
+Aplicación **Shiny** que ejecuta un modelo de *«Heterogeneidad patrimonial y
 suficiencia del consumo ante la reducción de la tasa de sustitución de las
-pensiones en España»* para **un individuo** cuyos datos se introducen a mano.
+pensiones en España»* para **un individuo** cuyos datos se introducen manualmente.
 
 La estrategia combina tres palancas: **renta vitalicia** (del patrimonio
 financiero), **hipoteca inversa** (de la vivienda) y un **colchón de ahorro**.
@@ -10,8 +10,7 @@ La app simula miles de trayectorias Monte Carlo (Vasicek correlacionado para
 tipo de interés, inflación y revalorización inmobiliaria + mortalidad PER2020) y
 mide la **TSR vitalicia** = consumo sostenido / objetivo de consumo.
 
-**Toda la ficha técnica de la simulación es editable** y la app ejecuta
-exactamente el escenario que introduces. Todas las variables se introducen en su
+**Toda la ficha técnica de la simulación es editable**. Todas las variables se introducen en su
 **unidad natural** (fracciones, no porcentajes): un tipo de interés del 0,96 % se
 escribe `0.0096`. La pestaña **«Ejemplo de parámetros»** documenta cada variable
 con un valor de referencia.
@@ -24,25 +23,15 @@ Necesitas **R (≥ 4.2)** y los paquetes `shiny`, `ggplot2` y `scales`:
 install.packages(c("shiny", "ggplot2", "scales"))
 ```
 
-### Opción A — directamente desde GitHub
+### Directamente desde GitHub
 
 ```r
 shiny::runGitHub("SergiVergaraEco/TSR_stochastic_simulator")
 ```
 
-### Opción B — clonando el repositorio
-
-```bash
-git clone https://github.com/SergiVergaraEco/TSR_stochastic_simulator.git
-```
-
-```r
-shiny::runApp("TSR_stochastic_simulator")   # o abrir app.R en RStudio y pulsar «Run App»
-```
-
 ## Qué muestra
 
-- **Tarjetas**: TSR vitalicia mediana y P10, P(shortfall), ahorro residual,
+- **Indicadores**: TSR vitalicia mediana y P10, P(shortfall), ahorro residual,
   herencia potencial, renta vitalicia `Rf`, renta de la hipoteca inversa `R_HI`,
   gap de la reforma y esperanza de vida.
 - **Cobertura (TSR) en el tiempo** — abanico p10–p90 de la TSR acumulada.
